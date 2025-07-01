@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>InstaSEO Booster</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>InstaSEO Booster - Manual Dashboard</h1>
+    <p>Optimize your Instagram and Website SEO manually.</p>
+
+    <section>
+        <h2>Instagram Optimization</h2>
+        <label for="instaBio">Instagram Bio:</label><br />
+        <textarea id="instaBio" rows="4" cols="50" placeholder="Paste your Instagram bio here..."></textarea><br />
+        <button onclick="analyzeInstagram()">Analyze Bio</button>
+        <div id="instaResult"></div>
+    </section>
+
+    <section>
+        <h2>Website SEO</h2>
+        <label for="webPageTitle">Web Page Title:</label><br />
+        <input id="webPageTitle" type="text" size="50" placeholder="Enter page title here..." /><br />
+        <label for="webMetaDesc">Meta Description:</label><br />
+        <textarea id="webMetaDesc" rows="3" cols="50" placeholder="Enter meta description here..."></textarea><br />
+        <button onclick="analyzeWebsite()">Analyze Website SEO</button>
+        <div id="webResult"></div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
