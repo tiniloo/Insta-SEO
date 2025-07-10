@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>InstaSEO Booster</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InstaSEO Booster</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>InstaSEO Booster - Manual Dashboard</h1>
-    <p>Optimize your Instagram and Website SEO manually.</p>
+<body class="bg-gray-100 text-gray-900 font-sans">
+  <div class="max-w-5xl mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center text-purple-700 mb-8">InstaSEO Booster</h1>
 
-    <section>
-        <h2>Instagram Optimization</h2>
-        <label for="instaBio">Instagram Bio:</label><br />
-        <textarea id="instaBio" rows="4" cols="50" placeholder="Paste your Instagram bio here..."></textarea><br />
-        <button onclick="analyzeInstagram()">Analyze Bio</button>
-        <div id="instaResult"></div>
-    </section>
+    <div class="flex space-x-4 mb-6">
+      <button onclick="showTab('instagram')" class="tab-btn bg-purple-700 text-white px-4 py-2 rounded">Instagram</button>
+      <button onclick="showTab('website')" class="tab-btn bg-gray-300 px-4 py-2 rounded">Website</button>
+    </div>
 
-    <section>
-        <h2>Website SEO</h2>
-        <label for="webPageTitle">Web Page Title:</label><br />
-        <input id="webPageTitle" type="text" size="50" placeholder="Enter page title here..." /><br />
-        <label for="webMetaDesc">Meta Description:</label><br />
-        <textarea id="webMetaDesc" rows="3" cols="50" placeholder="Enter meta description here..."></textarea><br />
-        <button onclick="analyzeWebsite()">Analyze Website SEO</button>
-        <div id="webResult"></div>
-    </section>
+    <div id="instagram" class="tab">
+      <h2 class="text-2xl font-semibold mb-4">Instagram SEO Analyzer</h2>
+      <form id="instagramForm" class="space-y-4">
+        <input type="text" name="username" placeholder="Instagram Username" class="w-full p-2 border border-gray-300 rounded" required />
+        <textarea name="bio" placeholder="Instagram Bio" rows="3" class="w-full p-2 border border-gray-300 rounded"></textarea>
+        <input type="text" name="hashtags" placeholder="Sample Hashtags (#baby #toys ...)" class="w-full p-2 border border-gray-300 rounded" />
+        <button type="submit" class="bg-purple-700 text-white px-4 py-2 rounded">Analyze</button>
+      </form>
+      <div id="instagramResults" class="mt-6"></div>
+    </div>
 
-    <script src="script.js"></script>
+    <div id="website" class="tab hidden">
+      <h2 class="text-2xl font-semibold mb-4">Website SEO Checker</h2>
+      <form id="websiteForm" class="space-y-4">
+        <input type="url" name="url" placeholder="https://yourwebsite.com" class="w-full p-2 border border-gray-300 rounded" required />
+        <textarea name="meta" placeholder="Meta description" rows="2" class="w-full p-2 border border-gray-300 rounded"></textarea>
+        <textarea name="keywords" placeholder="Target Keywords" rows="2" class="w-full p-2 border border-gray-300 rounded"></textarea>
+        <button type="submit" class="bg-purple-700 text-white px-4 py-2 rounded">Analyze</button>
+      </form>
+      <div id="websiteResults" class="mt-6"></div>
+    </div>
+
+    <div class="mt-10">
+      <a href="InstaSEO_Beginner_Guide.pdf" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded mr-4 inline-block">Beginner's Guide PDF</a>
+      <button onclick="exportPDF()" class="bg-green-600 text-white px-4 py-2 rounded">Export Report (PDF)</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
